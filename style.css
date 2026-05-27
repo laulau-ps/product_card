@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #e6e6e6;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        clip-path: circle(55% at right 30%);
+        background: linear-gradient(0deg, #fd9bb0 10%, #F6416C 100%);
+        z-index: 0;
+    }
+}
+
+::selection {
+    background: #fee6eb;
+}
+
+.product-container {
+    display: flex;
+    max-width: 750px;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 12px;
+        clip-path: circle(65% at right 35%);
+        background-image: linear-gradient(135deg, #fd9bb0 10%, #F6416C 100%);
+        z-index: -1;
+    }
+
+    & .info-side {
+        flex: 1;
+        padding: 35px;
+
+        & .title {
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        & p {
+            color: #737373;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        & .rating {
+            color: #fd9bb0;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        & .pricing {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+
+            & .old-price {
+                font-size: 20px;
+                color: #737373;
+                position: relative;
+                width: max-content;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    height: 1px;
+                    width: 110%;
+                    background: #737373;
+                    top: 55%;
+                    left: -5%;
+                }
+            }
+
+            & .current-price {
+                color: #fc6989;
+                font-size: 30px;
+                font-weight: 600;
+            }
+        }
+
+        & .cart-btn {
+            margin-top: 40px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #fff;
+            background: #00e6e6;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover { transform: scale(0.98); }
+        }
+    }
+
+    & .visual-side {
+        position: relative;
+        width: 45%;
+
+        & .product-image {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            & img {
+                width: 110%;
+                height: 320px;
+                object-fit: contain;
+                position: relative;
+                right: 20px;
+                top: -20px;
+            }
+
+            & .product-meta {
+                text-align: right;
+                padding-right: 35px;
+                margin-top: -70px;
+
+                & .brand {
+                    font-size: 17px;
+                    font-weight: 600;
+                    color: #c9032e;
+                }
+
+                & .model-name {
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: #fff;
+                }
+
+                & .shipping-tag {
+                    font-size: 14px;
+                    color: #000;
+                    display: block;
+                }
+
+                & .more-btn {
+                    margin-top: 15px;
+                    background: transparent;
+                    color: #fff;
+                    border: 1px solid #fff;
+                    border-radius: 12px;
+                    padding: 8px 18px;
+                    font-size: 14px;
+                    cursor: pointer;
+                    transition: 0.3s;
+
+                    &:hover {
+                        background: #fff;
+                        color: #fc6989;
+                    }
+                }
+            }
+        }
+    }
+}
